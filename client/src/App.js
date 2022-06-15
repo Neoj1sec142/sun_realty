@@ -6,7 +6,7 @@ import Client from './services/Axios'
 // PAGES IMPORTS
 // COMPONENT IMPORTS
 // LOGIN IMPORTS
-import NavDrop from './components/Nav.jsx'
+// import NavDrop from './components/Nav.jsx'
 import Login from './components/Login'
 import Register from './components/Register'
 import Logout from './components/Logout'
@@ -47,8 +47,6 @@ const App = () => {
   return (
     <div className="App">
       <LoginContext.Provider value={{loginStatus, setLoginStatus, user, setUser}}>
-      <header className="App-header">
-      </header>
       <Routes>
         {/* Login Routes  */}
         <Route path='/register' element={ <Register loginStatus={loginStatus}/> } />
@@ -56,7 +54,7 @@ const App = () => {
         <Route path='/logout' element={ <Logout /> } />
         {/* Page Routes  */}
         <Route path='/' element={<Land loginStatus={loginStatus}/>}/>
-        <Route path='/land' element={<Home loginStatus={loginStatus}/>}/>
+        <Route path='/home' element={<Home loginStatus={loginStatus}/>}/>
       </Routes>
       </LoginContext.Provider>
     </div>

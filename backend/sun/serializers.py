@@ -21,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id','email','first_name','last_name','username','password']
         ## OLD 
         # fields = [field.name for field in model._meta.fields]
-        fields.append('posts')
+        
 
         ## NEW AS OF AUTH SETUP
         extra_kwargs = {'write_only': True}

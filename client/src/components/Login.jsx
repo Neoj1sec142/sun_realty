@@ -29,7 +29,7 @@ const Login = () => {
                 localStorage.setItem('user_id', res.data.id)
                 localStorage.setItem('username', login.username)
                 setLoginStatus(true)
-                navigate('/land')
+                navigate('/home')
             })
         })
         .catch(err => console.log(err))
