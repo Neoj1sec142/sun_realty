@@ -40,7 +40,7 @@ class User(AbstractUser):
         return self.username
 
 class Note(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     note = models.TextField()
     note_type = models.CharField(max_length=255)

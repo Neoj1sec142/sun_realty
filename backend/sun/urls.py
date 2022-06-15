@@ -27,10 +27,10 @@ urlpatterns = [
     path('users/alldetails/', views.UserAllDetailsList.as_view(), name='useralldetails_list'),
     path('users/alldetails/<int:pk>', views.UserAllDetailsDetail.as_view(), name='useralldetails_detail'),
 
-    path('properties/', views.PostList.as_view(), name='post_list'),
-    path('properties/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
-    path('clients/', views.LanguageList.as_view(), name='language_list'),
-    path('clients/<int:pk>', views.LanguageDetail.as_view(), name='language_detail'),
-    path('notes/', views.LanguageList.as_view(), name='language_list'),
-    path('notes/<int:pk>', views.LanguageDetail.as_view(), name='language_detail'),
+    path('properties/', views.PropertyList.as_view(), name='property_list'),
+    path('properties/<int:pk>', views.PropertyDetail.as_view(), name='property_detail'),
+    path('clients/', views.ClientList.as_view(), name='client_list'),
+    path('clients/<int:pk>', views.ClientDetail.as_view(), name='client_detail'),
+    path('notes/', views.NoteList.as_view(), name='note_list'),
+    path('notes/<int:pk>', views.NoteDetail.as_view(), name='note_detail'),
 ]

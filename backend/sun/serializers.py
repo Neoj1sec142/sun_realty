@@ -5,7 +5,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class RegionSerializer(serializers.ModelSerializer):
   class Meta:
-    model = Language
+    model = Region
     fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
@@ -38,7 +38,7 @@ class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = '__all__'
-        extra_fields = ('property')
+        extra_fields = ('properties')
 
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,9 +50,9 @@ class PropertySerializer(serializers.ModelSerializer):
     client_id = ClientSerializer(read_only=True)
     region_id = RegionSerializer(read_only=True)
     class Meta:
-        model = Post
+        model = Property
         fields = '__all__'
-        extra_fields = ('user','language')
+        extra_fields = ('client','region')
 
 class UserAllDetailsSerializer(serializers.ModelSerializer):
     # houseplants = HouseplantSerializer(many = True, read_only = True)
