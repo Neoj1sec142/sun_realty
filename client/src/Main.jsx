@@ -56,9 +56,7 @@ const Main = () => {
     
             <AgGridReact
                 ref={gridRef} // Ref for accessing Grid's API
-    
                 rowData={rowData} // Row Data for Rows
-                reactUi={true}
                 columnDefs={columnDefs} // Column Defs for Columns
                 defaultColDef={defaultColDef} // Default Column Properties
     
