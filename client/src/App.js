@@ -1,13 +1,16 @@
+// Service Imports
 import {Routes, Route} from 'react-router-dom'
-import './App.css';
-import Main from './Main.jsx'
-function App() {
+import Main from './pages/Main';
+import './styles/App.css';
+
+const App = () => {
   return (
     <div className="App">
+      <header className="App-header">
+      </header>
       <Routes>
-        <Route path='/' element={<Main/>}/>
+        <Route path="/" element={<Main />} />
       </Routes>
-
     </div>
   );
 }
