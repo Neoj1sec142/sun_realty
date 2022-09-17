@@ -8,11 +8,13 @@ import './styles/App.css';
 import Landing from './pages/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
+import NavB from './components/Nav';
 
 const App = () => {
   return (
     <div className="App">
-      <header className="">
+      <header className="master-header">
+        <NavB />
       </header>
       <Routes>
         {/* Base Routes */}

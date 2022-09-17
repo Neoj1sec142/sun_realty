@@ -1,22 +1,22 @@
-import React, {useState} from 'react'
-import Login from '../components/Login'
+import React from 'react'
 
 const Landing = () => {
-    const [state, setState] = useState(false)
-    if(state){
-        return(
-            <Login />   
-        )
-    }else if(!state){
-        return(
-            <div className='land'>
-                <div className='card'>
-                    <button onClick={() => setState(true)}
-                            className='btn btn-outline-dark'>Get Started</button>
-                </div>
+    
+    return(
+        <div className='land'>
+            <br></br>
+            <div className='card'>
+                <br></br>
+                <a href='/login'>
+                <button className='btn btn-outline-dark'>Get Started</button>
+                </a>
+                <br></br>
+                <a href='/register'>
+                <button className='btn btn-outline-dark'>Create Account</button>
+                </a>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default Landing
