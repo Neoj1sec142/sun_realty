@@ -8,6 +8,7 @@ import './styles/App.css';
 import Landing from './pages/Landing';
 import Register from './components/Register';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import NavB from './components/Nav';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/main" element={<Main />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<Logout />} />
       </Routes>
     </div>
   );
