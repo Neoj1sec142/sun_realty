@@ -1,11 +1,7 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Client from '../services/api'
-// email
-// first
-// last_
-// username
-// passsword
+import Client from '../../services/api'
+
 
 const Register = () => {
     const navigate = useNavigate()

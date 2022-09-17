@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import Client from '../services/api'
+import Client from '../../services/api'
 
 const Login = ({setLogin}) => {
     const navigate = useNavigate()

@@ -15,6 +15,7 @@ const NavB = () => {
         <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent: 'space-between'}}>
                 <Nav className="mr-auto" style={{textAlign: 'center'}}>
                 <Nav.Link href='/main'>Home</Nav.Link>
+                <Nav.Link href='/grid'>Grid</Nav.Link>
                 {/* <Nav.Link href={`/profile/${user.user_id}`}>Profile</Nav.Link> */}
                 
                 {/* <NavDropdown title="Toolbelt" id="collasible-nav-dropdown" >

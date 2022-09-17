@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Client from '../services/api'
+import Client from '../../services/api'
 
 const Logout = () => {
 
