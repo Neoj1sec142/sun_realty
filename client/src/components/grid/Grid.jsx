@@ -5,17 +5,18 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 import {GetPropertys} from '../../services/PropertyServices'
 const Grid = () => {
     const gridRef = useRef(); // Optional - for accessing Grid's API
-    const [rowData, setRowData] = useState(); // Set rowData to Array of Objects, one Object per Row
+    const [rowData, setRowData] = useState([]); // Set rowData to Array of Objects, one Object per Row
    
     // Each Column Definition results in one Column.
     const [columnDefs, setColumnDefs] = useState([
       {field: 'title', filter: true},
       {field: 'location', filter: true},
-      {field: 'address'},
+      {field: 'address', filter: true},
       {field: 'description'},
+      {field: 'owner_name', filter: true},
+      {field: 'water_damage'},
       {field: 'date_created'},
-      {field: 'date_created'},
-      {field: 'date_created'}
+      {field: 'user_id'}
     ]);
     
     // DefaultColDef sets props common to all Columns
