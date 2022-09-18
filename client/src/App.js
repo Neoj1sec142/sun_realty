@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import Main from './pages/Main';
 import Grid from './components/grid/Grid'
 import Landing from './pages/Landing';
+import Proptertys from './pages/Propterys'
 import Register from './components/base/Register';
 import Login from './components/base/Login';
 import Logout from './components/base/Logout';
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/logout" element={<Logout />} />
         {/* Staff Routes */}
         <Route path="/grid" element={<Grid />} />
+        <Route path="/dat-center" element={<Proptertys />} />
       </Routes>
     </div>
   );

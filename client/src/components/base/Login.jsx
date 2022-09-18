@@ -25,6 +25,7 @@ const Login = ({setLogin}) => {
             Client.get(`users/${form.username}`)
             .then(res => {
                 localStorage.setItem('user_id', res.data.id)
+                localStorage.setItem('is_staff', res.data.is_staff)
                 localStorage.setItem('username', form.username)
                 navigate('/main')
             })

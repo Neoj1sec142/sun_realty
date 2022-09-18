@@ -4,3 +4,7 @@ html{
     bottom: 0;
     top: 0;
 }
+a#dt{
+    text-decoration: none;
+    color: rgb(34, 33, 33);
+}

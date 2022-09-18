@@ -16,6 +16,7 @@ const NavB = () => {
                 <Nav className="mr-auto" style={{textAlign: 'center'}}>
                 <Nav.Link href='/main'>Home</Nav.Link>
                 <Nav.Link href='/grid'>Grid</Nav.Link>
+                <Nav.Link href='/dat-center'>Data Hub</Nav.Link>
                 {/* <Nav.Link href={`/profile/${user.user_id}`}>Profile</Nav.Link> */}
                 
                 {/* <NavDropdown title="Toolbelt" id="collasible-nav-dropdown" >
