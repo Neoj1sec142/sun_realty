@@ -35,34 +35,37 @@ const Home = () => {
 
   return (
     <main className='home'>
-      <Helmet>
-        <title>Sun Realty - Home</title>
-        <meta name='description' content='Sun Realty Home Page'/>
-      </Helmet>
-      <section className='home__form'>
-        <ListingForm setListings={setListings} />
-      </section>
-      <section className='home__listings'>
-        <Listings listings={currentListings} />
-      </section>
-      <section className='home__pagination'>
-        <div className='row'>
-          {
-            listings.length !== 0 ? (
-              <Pagination 
-                itemsPerPage={listingsPerPage}
-                count={listings.length}
-                visitPage={visitPage}
-                previous={previous_number}
-                next={next_number}
-                active={active}
-                setActive={setActive}
-              />
-            ) : null
-          }
-        </div>
-      </section>
-    </main>
+            <Helmet>
+                <title>Sun Realty - Home</title>
+                <meta
+                    name='description'
+                    content='Sun Realty Home Page'
+                />
+            </Helmet>
+            <section className='home__form'>
+                <ListingForm setListings={setListings} />
+            </section>
+            <section className='home__listings'>
+                <Listings listings={currentListings} />
+            </section>
+            <section className='home__pagination'>
+                <div className='row'>
+                    {
+                        listings.length !== 0 ? (
+                            <Pagination
+                                itemsPerPage={listingsPerPage}
+                                count={listings.length}
+                                visitPage={visitPage}
+                                previous={previous_number}
+                                next={next_number}
+                                active={active}
+                                setActive={setActive}
+                            />
+                        ) : null
+                    }
+                </div>
+            </section>
+        </main>
   );
 }
 
