@@ -33,7 +33,7 @@ const Signup = ({setAlert, signup, isAutheticated}) => {
     navigate('/')
   }
   return (
-    <div class='auth'>
+    <div className='auth'>
       <Helmet>
         <title>Sun Realty - Register</title>
         <meta name='description' content='login page'/>

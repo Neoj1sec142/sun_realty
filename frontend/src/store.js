@@ -6,9 +6,9 @@ import rootReducer from './reducers/index'
 const initialState = {}
 const middlware = [thunk];
 const store = createStore(
-    rootReducer, initialState,
-    composeWithDevTools(
-        applyMiddleware(...middlware))
+    rootReducer, 
+    initialState,
+    composeWithDevTools(applyMiddleware(...middlware))
 )
 
 export default store
