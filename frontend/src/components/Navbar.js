@@ -12,7 +12,7 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
     const guestLinks = (
         <Fragment>
             <Link className='navbar__top__auth__link' to='/login'>Login</Link>
-            <Link className='navbar__top__auth__link' to='/login'>Signup</Link>
+            <Link className='navbar__top__auth__link' to='/signup'>Signup</Link>
         </Fragment>
     )
     
@@ -24,22 +24,22 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
                         <Link className='navbar__top__logo__link' to='/'>Sun Realty</Link>
                     </div>
                     <div className='navbar__top__auth'>
-                        {!loading && (<Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>)}
+                        { !loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>) }
                     </div>
-                    <div className='navbar__bottom'>
-                        <li className='navbar__bottom__item'>
-                            <NavLink className='navbar__bottom__item__link' to='/'>Home</NavLink>
-                        </li>
-                        <li className='navbar__bottom__item'>
-                            <NavLink className='navbar__bottom__item__link' to='/listings'>Listings</NavLink>
-                        </li>
-                        <li className='navbar__bottom__item'>
-                            <NavLink className='navbar__bottom__item__link' to='/about'>About</NavLink>
-                        </li>
-                        <li className='navbar__bottom__item'>
-                            <NavLink className='navbar__bottom__item__link' to='/contact'>Contact</NavLink>
-                        </li>
-                    </div>
+                </div>
+                <div className='navbar__bottom'>
+                    <li className='navbar__bottom__item'>
+                        <NavLink className='navbar__bottom__item__link' exact to='/'>Home</NavLink>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <NavLink className='navbar__bottom__item__link' exact to='/listings'>Listings</NavLink>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <NavLink className='navbar__bottom__item__link' exact to='/about'>About</NavLink>
+                    </li>
+                    <li className='navbar__bottom__item'>
+                        <NavLink className='navbar__bottom__item__link' exact to='/contact'>Contact</NavLink>
+                    </li>
                 </div>
             </nav>
             <Alert />
