@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -6,7 +6,7 @@ import {setAlert} from '../actions/alert'
 import { signup } from '../actions/auth';
 import PropTypes from 'prop-types'
 
-const Signup = ({setAlert, signup, isAutheticated}) => {
+const Signup = ({setAlert, signup, isAuthenticated}) => {
   
   const navigate = useNavigate()
   
@@ -16,7 +16,11 @@ const Signup = ({setAlert, signup, isAutheticated}) => {
     password: '',
     password2: ''
   })
-  
+  useEffect(() => {
+    if(isAuthenticated === true){
+      navigate('/')
+    }
+  },[])
   const { name, email, password, password2} = formData;
   
   const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
@@ -27,11 +31,10 @@ const Signup = ({setAlert, signup, isAutheticated}) => {
       setAlert('Passwords do not match', 'error')
     }else{
       signup(name, email, password, password2)
+      navigate('/login')
     }
   }
-  if(isAutheticated){
-    navigate('/')
-  }
+  
   return (
     <div className='auth'>
       <Helmet>
@@ -86,6 +89,7 @@ const Signup = ({setAlert, signup, isAutheticated}) => {
   );
 }
 
+
 Signup.propTypes = {
   setAlert: PropTypes.func.isRequired,
   signup: PropTypes.func.isRequired,
@@ -93,7 +97,7 @@ Signup.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  isAutheticated: state.auth.isAutheticated
+  isAutheticated: state.auth.isAuthenticated
 })
 
 export default connect(mapStateToProps, {setAlert, signup})(Signup);

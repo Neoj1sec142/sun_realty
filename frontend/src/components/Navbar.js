@@ -29,16 +29,16 @@ const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
                 </div>
                 <div className='navbar__bottom'>
                     <li className='navbar__bottom__item'>
-                        <NavLink className='navbar__bottom__item__link' exact to='/'>Home</NavLink>
+                        <NavLink className='navbar__bottom__item__link' to='/'>Home</NavLink>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <NavLink className='navbar__bottom__item__link' exact to='/listings'>Listings</NavLink>
+                        <NavLink className='navbar__bottom__item__link' to='/listings'>Listings</NavLink>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <NavLink className='navbar__bottom__item__link' exact to='/about'>About</NavLink>
+                        <NavLink className='navbar__bottom__item__link' to='/about'>About</NavLink>
                     </li>
                     <li className='navbar__bottom__item'>
-                        <NavLink className='navbar__bottom__item__link' exact to='/contact'>Contact</NavLink>
+                        <NavLink className='navbar__bottom__item__link' to='/contact'>Contact</NavLink>
                     </li>
                 </div>
             </nav>

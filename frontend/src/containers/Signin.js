@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
@@ -16,13 +16,16 @@ const Login = ({login, isAuthenticated}) => {
   const onSubmit = e => {
     e.preventDefault()
     login(email, password)
-  }
-
-  if(isAuthenticated){
     navigate('/')
   }
+  useEffect(() => {
+    if(isAuthenticated === true){
+      navigate('/')
+    }
+  },[])
+  
   return (
-    <div class='auth'>
+    <div className='auth'>
       <Helmet>
         <title>Sun Realty - Login</title>
         <meta name='description' content='login page'/>
@@ -54,6 +57,7 @@ const Login = ({login, isAuthenticated}) => {
       <p className='auth__authtext'>Don't have an account? <Link className='auth__authtext__link' to='/signup'>Click Here</Link> to register.</p>
     </div>
   );
+  
 }
 
 Login.propTypes = {
