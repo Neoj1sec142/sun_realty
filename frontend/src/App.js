@@ -12,7 +12,7 @@ import Home from './containers/Home'
 import ListingDetail from './containers/ListingDetail'
 import Listings from './containers/Listings'
 import Signin from './containers/Signin'
-import Signup from './containers/Signup'
+import Login from './containers/Signup'
 import NotFound from './components/NotFound'
 
 
@@ -28,7 +28,7 @@ const App = () => {
             <Route path='/listings/:id' element={<ListingDetail />}/>
             <Route path='/listings' element={<Listings />}/>
             <Route path='/login' element={<Signin />}/>
-            <Route path='/signup' element={<Signup />}/>
+            <Route path='/signup' element={<Login />}/>
             <Route path='*' element={<NotFound />}/>
           </Routes>
         </Layout>
