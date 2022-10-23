@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { login } from '../actions/auth';
@@ -26,6 +26,7 @@ const Login = ({login, isAuthenticated}) => {
   
   return (
     <div className='auth'>
+      
       <Helmet>
         <title>Sun Realty - Login</title>
         <meta name='description' content='login page'/>
@@ -55,6 +56,7 @@ const Login = ({login, isAuthenticated}) => {
         <button className='auth__form__button'>Login</button>
       </form>
       <p className='auth__authtext'>Don't have an account? <Link className='auth__authtext__link' to='/signup'>Click Here</Link> to register.</p>
+      
     </div>
   );
   

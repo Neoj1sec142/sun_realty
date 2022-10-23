@@ -3,6 +3,7 @@ import React from 'react'
 import './sass/main.scss'
 import { Provider } from 'react-redux';
 import store from './store'
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 // Pages and Components
 import Layout from './hoc/Layout'
@@ -19,6 +20,7 @@ import NotFound from './components/NotFound'
 const App = () => {
   return (
     <Provider store={store}>
+      <HelmetProvider>
       <Router>
         <Layout>
           <Routes>
@@ -33,6 +35,7 @@ const App = () => {
           </Routes>
         </Layout>
       </Router>
+      </HelmetProvider>
     </Provider>
   );
 }
