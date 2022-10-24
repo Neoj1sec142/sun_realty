@@ -1,8 +1,7 @@
 // Service and Styles
 import React from 'react'
 import './sass/main.scss'
-import { Provider } from 'react-redux';
-import store from './store'
+import { connect } from 'react-redux';
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 // Pages and Components
@@ -17,27 +16,35 @@ import Login from './containers/Signup'
 import NotFound from './components/NotFound'
 
 
-const App = () => {
+const App = ({isAuthenticated}) => {
+  console.log(isAuthenticated, "IS AUTH")
   return (
-    <Provider store={store}>
       <HelmetProvider>
-      <Router>
-        <Layout>
-          <Routes>
-            <Route exact path='/' element={<Home />}/>
-            <Route path='/about' element={<About />}/>
-            <Route path='/contact' element={<Contact />}/>
-            <Route path='/listings/:id' element={<ListingDetail />}/>
-            <Route path='/listings' element={<Listings />}/>
-            <Route path='/login' element={<Signin />}/>
-            <Route path='/signup' element={<Login />}/>
-            <Route path='*' element={<NotFound />}/>
-          </Routes>
-        </Layout>
-      </Router>
+        <Router>
+          <Layout>
+            <Routes>
+              <Route exact path='/' element={<Home />}/>
+              <Route path='/about' element={<About />}/>
+              <Route path='/contact' element={<Contact />}/>
+              <Route path='/listings' element={<Listings />}/>
+              <Route path='/login' element={<Signin />}/>
+              <Route path='/signup' element={<Login />}/>
+              <Route path='*' element={<NotFound />}/>
+              {/* PROTECTED ROUTES */}
+              {isAuthenticated ? (
+                <Route path='/listings/:id' element={<ListingDetail />}/>
+              ) : (
+                <Route path='/listings/:id' element={<Signin />}/>
+              )}
+            </Routes>
+          </Layout>
+        </Router>
       </HelmetProvider>
-    </Provider>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps)(App);

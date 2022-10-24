@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom';
 
+
 const ListingDetail = (props) => {
   
   const [listing, setListing] = useState({})
@@ -32,8 +33,9 @@ const ListingDetail = (props) => {
     const id = listing.realtor;
     const config = {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
+        "Authorization": "JWT " + localStorage.getItem('access_token'),
+        "Content-Type": "application/json",
+        "accept": "application/json"
       }
     }
     if(id){

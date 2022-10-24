@@ -13,6 +13,7 @@ class ListingsView(ListAPIView):
     lookup_field = 'slug'
     
 class ListingView(RetrieveAPIView):
+    permission_classes = (permissions.AllowAny, )
     queryset = Listing.objects.order_by('-list_date').filter(is_published=True)
     serializer_class = ListingDetailSerializer
     lookup_field = 'slug'

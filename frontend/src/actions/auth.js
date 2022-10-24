@@ -15,6 +15,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({email, password})
     try{
         const res = await axios.post('http://localhost:8000/api/token/', body, config)
+        console.log(res)
         // if(res.status == 200){}else{}
         dispatch({
             type: LOGIN_SUCCESS,
