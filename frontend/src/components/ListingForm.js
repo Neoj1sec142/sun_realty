@@ -32,7 +32,7 @@ const ListingForm = (props) => {
             'Content-Type': 'application/json'
         }
         setLoading(true)
-        axios.post('https://localhost:8000/api/listings/search', {sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords })
+        axios.post('http://localhost:8000/api/listings/search', {sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords })
         .then(res => {
             setLoading(false)
             props.setListings(res.data);
@@ -86,11 +86,11 @@ const ListingForm = (props) => {
                     <div className='listingform__section'>
                         <label className='listingform__label' htmlFor='days_listed'>Days Listed</label>
                         <select className='listingform__select' name='days_listed' onChange={e => onChange(e)} value={days_listed}>
-                            <option>1 of less</option>
-                            <option>2 of less</option>
-                            <option>5 of less</option>
-                            <option>10 of less</option>
-                            <option>20 of less</option>
+                            <option>1 or less</option>
+                            <option>2 or less</option>
+                            <option>5 or less</option>
+                            <option>10 or less</option>
+                            <option>20 or less</option>
                             <option>Any</option>
                         </select>
                     </div>
@@ -162,7 +162,7 @@ const ListingForm = (props) => {
                                 width={50}
                             />
                         </div> : 
-                        <button className='listingform__button listingform__button--primary'>Save</button>
+                        <button type='submit' className='listingform__button listingform__button--primary'>Save</button>
                     }
                 </div>
             </div>
