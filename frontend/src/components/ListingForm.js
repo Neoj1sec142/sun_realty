@@ -29,7 +29,8 @@ const ListingForm = (props) => {
     const onSubmit = e => {
         e.preventDefault()
         axios.defaults.headers = {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
         setLoading(true)
         axios.post('http://localhost:8000/api/listings/search', {sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords })
