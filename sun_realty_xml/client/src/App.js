@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './utils/Layout'
 import Main from './containers/Main'
@@ -15,4 +16,4 @@ const App = () => {
   )
 }
 
-export default App
+export default connect(null, {})(App);

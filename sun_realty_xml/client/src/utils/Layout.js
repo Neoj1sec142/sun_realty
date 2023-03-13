@@ -1,20 +1,16 @@
-import React, {useEffect} from 'react'
-import Navbar from '../components/base/Navbar'
-import { load_current } from '../store/actions/auth'
+import React from 'react'
+// import Navbar from '../components/base/Navbar'
 import { connect } from 'react-redux'
 
 const Layout = ({children, load_current}) => {
     
-    useEffect(() => {
-        load_current(null)
-    }, [])
   
     return(
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             
             {children}
         </div>
     )
 }
-export default connect(null, {load_current})(Layout)
+export default connect(null, {})(Layout)
